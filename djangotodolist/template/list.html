@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+        background: linear-gradient(to right,  #141E30, #243B55);
+        }
+        table{
+      width: 60%;
+      height:240px;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 18px;
+      text-align: left;
+      justify-content:center;
+      align-items: center;
+      margin-top:80px;
+      margin-left:240px;
+      background-color:white;
+    }
+    th{
+    padding:15px;
+    font-size:24px;
+    }
+td{
+padding:6px;
+}
+     h1{
+        text-align:center;
+        color:white;
+        }
+     button{
+     padding:10px 35px;
+     background-color:blue;
+     border:none;
+     border-radius:3px;
+        }
+        button a{
+        color:white;
+        font-size:15px;
+        text-decoration:none;
+          transition: background-color 0.8s ease;
+        }
+        button:hover{
+            background-color: #0056b3;
+        }
+     button a:hover {
+  text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+<h1>To-Do List</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Task to do</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+ {% for i in x %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.tasktodo}}</td>
+        <td><button><a href="{% url 'delete' i.id %}">delete</a></button></td>
+        <td><button><a href="{% url 'update' i.id %}">update</a></button></td>
+
+    </tr>
+ {% endfor %}
+</table>
+</body>
+</html>

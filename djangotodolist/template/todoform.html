@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+        background: linear-gradient(to right,  #141E30, #243B55);
+        }
+        button{
+        background-color:blue;
+        color:white;
+        border:none;
+        padding:10px 20px;
+        font-size:20px;
+        border-radius:5px;
+        margin-top:30px;
+        cursor: pointer;
+        transition: background-color 0.10s ease, transform 0.2s ease;
+      }
+        button:hover
+        {
+        background-color: black;
+        transform: scale(1.1);
+        }
+        div{
+        background-color:white;
+        height:250px;
+        width:500px;
+        justify-content: center;
+        align-items: center;
+        margin-top:130px;
+        margin-left:340px;
+        text-align:center;
+        padding-top:10px;
+        border-radius:10px;
+    }
+        form input{
+        padding:10px 15px;
+        width:280px;
+        margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>To-Do List</h1>
+<form method ='POST'>
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit">Submit</button>
+</form>
+</div>
+</body>
+</html>
